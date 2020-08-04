@@ -12,14 +12,17 @@ let answerBudjet = +prompt('Ваш бюджет?'),
     };
 
 for (let i = 0; i < 5; i++) {
-    var answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
-    if ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) !== null && (typeof (answerShopGoods)) != '' && answerShopGoods.length < 50) {
-        mainList.shopGoods[i] = answerShopGoods;
-    }
-    // else {
-    // сделать так чтобы цикл запускался заново
-    // }
+    let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
+    ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) !== null && answerShopGoods !== '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: alert('Заполните данные');
 }
+
+// let i = 0;
+// while (i < 5) {
+//     let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
+//     ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) !== null && answerShopGoods !== '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: alert('Заполните данные');
+//     i++;
+// }
+
 
 if (time < 0) {
     console.log('Такого не может быть');
