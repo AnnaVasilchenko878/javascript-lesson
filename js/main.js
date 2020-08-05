@@ -1,28 +1,28 @@
-let answerBudjet = +prompt('Ваш бюджет?'),
-    marketName = prompt('Название вашего магазина?'),
-    budjetOfDay = answerBudjet / 30,
-    time = 19,
+let answerBudjet,
+    marketName,
+    time;
 
-    mainList = {
-        budjet: answerBudjet,
-        market: marketName,
-        shopGoods: [],
-        employers: {},
-        open: false
-    };
+function start() {
+    answerBudjet = +prompt('Ваш бюджет?');
+    marketName = prompt('Название вашего магазина?');
+    time = 19;
+}
+start();
+
+let mainList = {
+    budjet: answerBudjet,
+    market: marketName,
+    shopGoods: [],
+    employers: {},
+    open: false
+};
+
+let budjetOfDay = answerBudjet / 30;
 
 for (let i = 0; i < 5; i++) {
     let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
-    ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) !== null && answerShopGoods !== '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: alert('Заполните данные');
+    ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) != null && answerShopGoods != '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: i = i - 1;
 }
-
-// let i = 0;
-// while (i < 5) {
-//     let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
-//     ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) !== null && answerShopGoods !== '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: alert('Заполните данные');
-//     i++;
-// }
-
 
 if (time < 0) {
     console.log('Такого не может быть');
