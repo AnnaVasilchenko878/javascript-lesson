@@ -22,10 +22,13 @@ let mainList = {
 
 let budjetOfDay = answerBudjet / 30;
 
-for (let i = 0; i < 5; i++) {
-    let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
-    ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) != null && answerShopGoods != '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: i = i - 1;
-}
+function chooseGoods() {
+    for (let i = 0; i < 5; i++) {
+        let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
+        ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) != null && answerShopGoods != '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: i = i - 1;
+    }
+};
+chooseGoods();
 
 if (time < 0) {
     console.log('Такого не может быть');
@@ -38,4 +41,4 @@ if (time < 0) {
 }
 
 alert('Ваш бюджет на день составляет ' + budjetOfDay);
-console.log(mainList.shopGoods);
+console.log(mainList);
