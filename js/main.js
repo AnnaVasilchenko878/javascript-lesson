@@ -5,9 +5,9 @@ let answerBudjet,
 function start() {
     answerBudjet = prompt('Ваш бюджет?');
     while (isNaN(answerBudjet) || answerBudjet == '' || answerBudjet == null) {
-        answerBudjet = prompt('Ваш бюджет?').toUpperCase();
+        answerBudjet = prompt('Ваш бюджет?');
     }
-    marketName = prompt('Название вашего магазина?');
+    marketName = prompt('Название вашего магазина?').toUpperCase();
     time = 19;
 }
 start();
@@ -30,15 +30,18 @@ function chooseGoods() {
 };
 chooseGoods();
 
-if (time < 0) {
-    console.log('Такого не может быть');
-} else if (time > 8 && time < 20) {
-    console.log('Время работать');
-} else if (time < 24) {
-    console.log('Уже слишком поздно');
-} else if (time > 24) {
-    console.log('В сутках только 24 часа');
-}
+function workTime(time) {
+    if (time < 0) {
+        console.log('Такого не может быть');
+    } else if (time > 8 && time < 20) {
+        console.log('Время работать');
+    } else if (time < 24) {
+        console.log('Уже слишком поздно');
+    } else if (time > 24) {
+        console.log('В сутках только 24 часа');
+    }
+};
+workTime(15);
 
 alert('Ваш бюджет на день составляет ' + budjetOfDay);
 console.log(mainList);
