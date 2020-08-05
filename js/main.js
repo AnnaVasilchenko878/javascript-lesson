@@ -1,4 +1,5 @@
 let answerBudjet,
+    budjetOfDay,
     marketName,
     time,
     price;
@@ -22,7 +23,6 @@ let mainList = {
     discount: false
 };
 
-let budjetOfDay = answerBudjet / 30;
 
 function chooseGoods() {
     for (let i = 0; i < 5; i++) {
@@ -45,5 +45,9 @@ function workTime(time) {
 };
 workTime(15);
 
-alert('Ваш бюджет на день составляет ' + budjetOfDay);
+function dailyBudget() {
+    budjetOfDay = Math.round(answerBudjet / 30);
+    alert('Ваш бюджет на день составляет ' + budjetOfDay);
+};
+dailyBudget();
 console.log(mainList);
