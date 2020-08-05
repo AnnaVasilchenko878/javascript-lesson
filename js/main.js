@@ -3,7 +3,10 @@ let answerBudjet,
     time;
 
 function start() {
-    answerBudjet = +prompt('Ваш бюджет?');
+    answerBudjet = prompt('Ваш бюджет?');
+    while (isNaN(answerBudjet) || answerBudjet == '' || answerBudjet == null) {
+        answerBudjet = prompt('Ваш бюджет?');
+    }
     marketName = prompt('Название вашего магазина?');
     time = 19;
 }
