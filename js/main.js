@@ -1,6 +1,7 @@
 let answerBudjet,
     marketName,
-    time;
+    time,
+    price;
 
 function start() {
     answerBudjet = prompt('Ваш бюджет?');
@@ -17,7 +18,8 @@ let mainList = {
     market: marketName,
     shopGoods: [],
     employers: {},
-    open: false
+    open: false,
+    discount: false
 };
 
 let budjetOfDay = answerBudjet / 30;
