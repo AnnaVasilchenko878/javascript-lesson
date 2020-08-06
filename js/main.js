@@ -5,11 +5,11 @@ let answerBudjet,
     price;
 
 function start() {
-    answerBudjet = prompt('Ваш бюджет?');
+    answerBudjet = prompt('Ваш бюджет?', '');
     while (isNaN(answerBudjet) || answerBudjet == '' || answerBudjet == null) {
-        answerBudjet = prompt('Ваш бюджет?');
+        answerBudjet = prompt('Ваш бюджет?', '');
     }
-    marketName = prompt('Название вашего магазина?').toUpperCase();
+    marketName = prompt('Название вашего магазина?', '').toUpperCase();
     time = 19;
 }
 start();
@@ -32,7 +32,7 @@ discountCalc();
 
 function chooseGoods() {
     for (let i = 0; i < 5; i++) {
-        let answerShopGoods = prompt('Какие товары вы собираетесь продавать?');
+        let answerShopGoods = prompt('Какие товары вы собираетесь продавать?', '');
         ((typeof (answerShopGoods)) === 'string' && (typeof (answerShopGoods)) != null && answerShopGoods != '' && answerShopGoods.length < 50) ? mainList.shopGoods[i] = answerShopGoods: i = i - 1;
     }
 };
@@ -40,7 +40,7 @@ chooseGoods();
 
 function hiringEmployers() {
     for (let i = 0; i < 4; i++) {
-        let answerNameEmployer = prompt('Введите имя сотрудника');
+        let answerNameEmployer = prompt('Введите имя сотрудника', '');
         ((typeof (answerNameEmployer)) === 'string' && (typeof (answerNameEmployer)) != null && answerNameEmployer != '' && answerNameEmployer.length < 50) ? mainList.employers[i] = answerNameEmployer: i = i - 1;
     }
 };
