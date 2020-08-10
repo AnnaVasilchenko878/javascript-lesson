@@ -12,7 +12,7 @@ function start() {
     marketName = prompt('Название вашего магазина?', '').toUpperCase();
     time = 19;
 }
-start();
+// start();
 
 
 let mainList = {
@@ -22,6 +22,7 @@ let mainList = {
     employers: {},
     open: false,
     discount: true,
+    shopItems: [],
     iscountCalc: function discountCalc() {
         (mainList.discount) ? price = 0.8: price = 1;
         return price;
@@ -53,7 +54,14 @@ let mainList = {
     dailyBudget: function dailyBudget() {
         budjetOfDay = Math.round(answerBudjet / 30);
         alert('Ваш бюджет на день составляет ' + budjetOfDay);
+    },
+    chooseShopItem: function chooseShopItem() {
+        let items = prompt('Перечислите через запятую ваши товары', '');
+        ((typeof (items)) === 'string' && items) ? mainList.shopItems = items.split(','): items = prompt('Перечислите через запятую ваши товары', '');
+        mainList.shopItems.push(prompt('Все товары вы учли?', ''));
+        mainList.shopItems.sort();
     }
 };
-
-console.log(mainList);
+console.log(mainList.chooseShopItem());
+// console.log(mainList.shopItems);
+// console.log(mainList);
